@@ -1,0 +1,24 @@
+.list {
+  width: 450px;
+}
+
+.chart {
+  width: 800px;
+}
+.card-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 36px;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  opacity: 0.8;
+}
+
+.example-card {
+  width: 280px;
+}

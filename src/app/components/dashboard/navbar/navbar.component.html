@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="container" autosize>
+  <mat-sidenav
+    #sidenav
+    class="sidenav"
+    mode="side"
+    opened="true"
+    (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()"
+  >
+    <mat-nav-list>
+      <button
+        class="button"
+        mat-list-item
+        color="primary"
+        *ngIf="isExpanded || isShowing"
+        routerLink="/dashboard"
+      >
+        <mat-icon class="button-icon">dashboard</mat-icon>
+        Dashboard
+      </button>
+      <button
+        class="button"
+        mat-list-item
+        color="primary"
+        *ngIf="isExpanded || isShowing"
+        routerLink="/dashboard/silos"
+      >
+        <mat-icon class="button-icon">domain</mat-icon>
+        Silos
+      </button>
+      <button
+        class="button"
+        mat-list-item
+        color="primary"
+        *ngIf="isExpanded || isShowing"
+        routerLink="/dashboard/sensors"
+      >
+        <mat-icon class="button-icon">settings_input_antenna</mat-icon>
+        Sensors
+      </button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content>
+</mat-sidenav-container>

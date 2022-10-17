@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="siloForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input formControlName="description" matInput placeholder="Description" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Crops</mat-label>
+      <mat-select formControlName="crops" multiple placeholder="Select crops">
+        <mat-option [value]="crops">All</mat-option>
+        <mat-option value="Wheat">Wheat</mat-option>
+        <mat-option value="Barley">Barley</mat-option>
+        <mat-option value="Nuts">Nuts</mat-option>
+        <mat-option value="Tobacco">Tobacco</mat-option>
+        <mat-option value="Corn">Corn</mat-option>
+        <mat-option value="Potato">Potato</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Capacity</mat-label>
+      <input
+        formControlName="capacity"
+        matInput
+        type="number"
+        placeholder="Ex. 1000"
+      />
+      <span matSuffix>t</span>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" (click)="addSilo()">
+    {{ actionButton }}
+  </button>
+</div>
